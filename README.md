@@ -3,6 +3,7 @@
 ## What Does Mimikey Do? ##  
 
 _Mimikey_ allows you to forward keyboard and mouse input to other computers. It's almost as if you're changing which computer those peripherals are plugged into.  
+![example](docs/example.gif)
 
 ---
 
