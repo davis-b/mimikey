@@ -70,4 +70,14 @@ If we injected input at a lower level, perhaps even emulating hardware, that wou
 
 As we are only forwarding inputs, differences in monitor sizes or orientation between the host and client do not affect the user experience of _Mimikey_.   
 
+_Mimikey_ should not be used to input sensitive information on clients. It does not encrypt packets.
+
 ---
+
+### TO-DO ###
+
+* Improve installation process by adding packaging code and putting _Mimikey_ (and dependencies) onto "The Python Package Index"  
+* Inside _mal_, add an option for lower level emulated input, such that it may work through UAC prompts and such. Utilize that new feature here.  
+* Allow switching the active client by moving one's mouse to an edge of their screen.
+* Create a GUI for reordering the relative location of computers in reference to the above TO-DO item.
+* Add option for encrypting packets.
