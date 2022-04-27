@@ -15,7 +15,7 @@ class Connection():
 		self.tcp_connection.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, True)
 
 	def __repr__(self):
-		return 'Connection ({}:{})'.format(*self.tcp_connection.getpeername())
+		return 'Connection ({}:{})'.format(self.remote_ip, self.udp_port)
 
 	def send(self, packet):
 		self.tcp_connection.sendall(tcp.wrap(packet))
