@@ -110,6 +110,9 @@ class ConnectionRecruiter():
 				print('Received invalid broadcast from ({}) | {} version {}'.format(addr, check, version))
 
 	def close(self):
-		self.open_socket_tcp.shutdown(socket.SHUT_RDWR)
+		try:
+			self.open_socket_tcp.shutdown(socket.SHUT_RDWR)
+		except OSError:
+			pass
 		self.open_socket_tcp.close()
 		self.open_socket_udp.close()
