@@ -84,7 +84,9 @@ class ActiveGrabber:
 			print('Grabber has been stopped without ever being started.', e)
 	
 	def _keyboard_reader(self):
-		for keycode, modifiers, keyup in self._keyboard._input():
+		for event in self._keyboard._input():
+			if event is None: continue
+			keycode, modifiers, keyup = event
 			keystate = key_states['key_up'] if keyup else key_states['key_down']
 			self._on_keypress(keycode, keystate)
 
@@ -97,6 +99,7 @@ class ActiveGrabber:
 
 	def _mouse_reader(self):
 		for event in self._mouse._input():
+			if event is None: continue
 			if len(event) == 3:
 				button, modifiers, button_up = event
 				button_state = mouse_states['mouse_up'] if button_up else mouse_states['mouse_down']
